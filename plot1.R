@@ -13,3 +13,5 @@ power = read.delim("./data/household_power_consumption.txt", sep=";", header=T,
 power$Date = as.Date(power$Date, format = "%d/%m/%Y")
 
 pwr = with(power, subset(power, Date == "2007-02-01" | Date == "2007-02-02"))
+
+hist(pwr$Global_active_power, main="Global Active Power", xlab="Global Active Power (kilowatts)", col = "red", ylim = c(0, 1200))
