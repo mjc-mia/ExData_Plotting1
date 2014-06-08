@@ -1,4 +1,4 @@
-# plot1.R - Code required for a simple histogram
+# plot2.R - Code required for a line plot of consumption over time
 
 # Create directory for data files, download file from UCI, unzip and load it into data frame
 if (!file.exists("data")) {
@@ -14,19 +14,18 @@ list.files("./data")
 power = read.delim("./data/household_power_consumption.txt", sep=";", header=T, 
                    stringsAsFactor = F, na.strings = "?")
 
-
 # Convert date to more convenient format and extract two days' data into new data frame
-power$Date = as.Date(power$Date, format = "%d/%m/%Y")
-pwr = with(power, subset(power, Date == "2007-02-01" | Date == "2007-02-02"))
+power$DateTime = paste(power$Date, power$Time)
+power$DateTime2 = strptime(power$DateTime, "%d/%m/%Y %H:%M:%S")
+
+pwr = with(power, subset(power, Date == "1/2/2007" | Date == "2/2/2007"))
 
 
-# Set up output to png, create histogram, turn off png output
-png(filename = "plot1.png",
+# Set up output to png, create histogram
+png(filename = "plot2.png",
     width = 480, height = 480, units = "px", pointsize = 12,
     bg = "white", res = NA, family = "", restoreConsole = TRUE
     )
-
-hist(pwr$Global_active_power, main="Global Active Power", xlab="Global Active Power (kilowatts)",
-     col = "red", ylim = c(0, 1200))
-
+with(pwr, plot(DateTime2, Global_active_power, type="l", 
+               ylab="Global Active Power (kilowatts)", xlab=""))
 dev.off()
