@@ -32,7 +32,7 @@ with(pwr, plot(DateTime2, Global_active_power, type="l",
                ylab="Global Active Power (kilowatts)", xlab=""))
 # plot 2
 with(pwr, plot(DateTime2, Sub_metering_1, type="l", 
-               ylab="Energy Submetering", xlab=""))
+               ylab="Energy sub metering", xlab=""))
 with(pwr, lines(DateTime2, Sub_metering_2, type="l", xlab="", col="red"))
 with(pwr, lines(DateTime2, Sub_metering_3, type="l", xlab="", col="blue"))
 legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
