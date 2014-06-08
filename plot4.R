@@ -43,5 +43,5 @@ with(pwr, plot(DateTime2, Voltage, type="l",
 # plot 4
 with(pwr, plot(DateTime2, Global_reactive_power, type="l", 
                ylab="Global Reactive Power", xlab="datetime"))
-dev.off()
+dev.off() 
 

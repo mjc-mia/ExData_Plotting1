@@ -28,4 +28,4 @@ png(filename = "plot2.png",
     )
 with(pwr, plot(DateTime2, Global_active_power, type="l", 
                ylab="Global Active Power (kilowatts)", xlab=""))
-dev.off()
+dev.off() 

@@ -33,4 +33,4 @@ with(pwr, lines(DateTime2, Sub_metering_2, type="l", xlab="", col="red"))
 with(pwr, lines(DateTime2, Sub_metering_3, type="l", xlab="", col="blue"))
 legend("topright", legend=c("Sub-metering 1", "Sub-metering 2", "Sub-metering 3"), 
         col=c("black", "red", "blue"), pch="____")
-dev.off()
+dev.off() 
