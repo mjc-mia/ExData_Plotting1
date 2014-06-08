@@ -28,9 +28,9 @@ png(filename = "plot3.png",
     )
 par(mfrow = c(1,1))
 with(pwr, plot(DateTime2, Sub_metering_1, type="l", 
-               ylab="Energy Sub-metering", xlab=""))
+               ylab="Energy Sub metering", xlab=""))
 with(pwr, lines(DateTime2, Sub_metering_2, type="l", xlab="", col="red"))
 with(pwr, lines(DateTime2, Sub_metering_3, type="l", xlab="", col="blue"))
-legend("topright", legend=c("Sub-metering 1", "Sub-metering 2", "Sub-metering 3"), 
+legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
         col=c("black", "red", "blue"), pch="____")
 dev.off() 
